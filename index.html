@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoav TC - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo" onclick="window.location='index.html'" style="cursor: pointer;">Yoav Trachtman Cohen</div>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="games.html">Games</a>
+                <a href="jams.html">Jams</a>
+                <a href="mods.html">Mods</a>
+                <a href="misc.html">Misc</a>
+            </nav>
+        </header>
+
+        <div class="hero" style="display: flex; flex-direction: row; align-items: center; gap: 40px;">
+            <div class="hero-content" style="padding: 40px 30px; flex: 1;">
+                <h2>About Me</h2>
+                <p style="margin-bottom: 1.5rem;">
+                    I am a passionate game developer who loves creating interactive experiences. 
+                    Whether it's full-scale games, quick prototypes for jams, or Minecraft mods and datapacks, 
+                    I'm always building something new.
+                </p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Contact</h3>
+                <p style="margin-bottom: 0.5rem;">Discord: yoavtc</p>
+                <p style="margin-bottom: 0.5rem;">E-Mail: yoavtc2004@gmail.com</p>
+                <p style="margin-bottom: 1rem;">
+                    <a href="https://www.linkedin.com/in/yoav-trachtman-cohen/" target="_blank" style="color: var(--text-primary); text-decoration: underline;">You can also message me on LinkedIn!</a>
+                </p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="https://github.com/YoavTC/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">📂 GitHub</a>
+                    <a href="https://www.linkedin.com/in/yoav-trachtman-cohen-646bba241/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">💼 LinkedIn</a>
+                    <a href="https://yoav-tc.itch.io/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">🕹️ itch.io</a>
+                    <a href="https://www.youtube.com/@yoav_tc" target="_blank" style="color: var(--text-secondary); text-decoration: none;">📺 YouTube</a>
+                    <a href="https://bsky.app/profile/yoavtc.bsky.social" target="_blank" style="color: var(--text-secondary); text-decoration: none;">🦋 BlueSky</a>
+                </div>
+            </div>
+            <div style="width: 200px; height: 200px; background-color: #27272a; border: 1px solid var(--border-color); margin-right: 30px; flex-shrink: 0; background-size: cover; background-position: center;">
+                <!-- Add your image here: style="background-image: url('path/to/your/image.jpg');" -->
+            </div>
+        </div>
+
+        <!-- Games Section -->
+        <div id="games-section" class="scroll-section">
+            <div class="section-header">
+                <h3 class="section-title">Games</h3>
+                <a href="games.html" class="view-all">View All &rarr;</a>
+            </div>
+            <div class="carousel-container">
+                <button class="nav-btn prev-btn" aria-label="Previous slide">&lsaquo;</button>
+                <div id="games-container" class="scroll-container"></div>
+                <button class="nav-btn next-btn" aria-label="Next slide">&rsaquo;</button>
+            </div>
+        </div>
+
+        <!-- Game Jams Section -->
+        <div id="jams-section" class="scroll-section">
+            <div class="section-header">
+                <h3 class="section-title">Game Jams</h3>
+                <a href="jams.html" class="view-all">View All &rarr;</a>
+            </div>
+            <div class="carousel-container">
+                <button class="nav-btn prev-btn" aria-label="Previous slide">&lsaquo;</button>
+                <div id="jams-container" class="scroll-container"></div>
+                <button class="nav-btn next-btn" aria-label="Next slide">&rsaquo;</button>
+            </div>
+        </div>
+
+        <!-- Minecraft Mods Section -->
+        <div id="misc-section" class="scroll-section">
+            <div class="section-header">
+                <h3 class="section-title">Misc Projects</h3>
+                <a href="misc.html" class="view-all">View All &rarr;</a>
+            </div>
+            <div class="carousel-container">
+                <button class="nav-btn prev-btn" aria-label="Previous slide">&lsaquo;</button>
+                <div id="mods-container" class="scroll-container"></div>
+                <button class="nav-btn next-btn" aria-label="Next slide">&rsaquo;</button>
+        <footer>"contact" class="about-section" style="text-align: center; display: block;">
+            <h2>Contact Me</h2>
+            <p style="color: var(--text-primary); margin-bottom: 0.5rem;">Discord: yoavtc</p>
+            <p style="color: var(--text-primary); margin-bottom: 1rem;">E-Mail: yoavtc2004@gmail.com</p>
+            <p>
+                <a href="https://www.linkedin.com/in/yoav-trachtman-cohen/" target="_blank" style="color: var(--text-primary); text-decoration: underline;">You can also message me on LinkedIn!</a>
+            </p>
+            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="https://github.com/YoavTC/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">📂 GitHub</a>
+                <a href="https://www.linkedin.com/in/yoav-trachtman-cohen-646bba241/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">💼 LinkedIn</a>
+                <a href="https://yoav-tc.itch.io/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">🕹️ itch.io</a>
+                <a href="https://www.youtube.com/@yoav_tc" target="_blank" style="color: var(--text-secondary); text-decoration: none;">📺 YouTube</a>
+                <a href="https://bsky.app/profile/yoavtc.bsky.social" target="_blank" style="color: var(--text-secondary); text-decoration: none;">🦋 BlueSky</a>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2025 Yoav Trachtman Cohen. All rights reserved.
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
