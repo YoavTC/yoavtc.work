@@ -129,4 +129,52 @@ document.addEventListener('DOMContentLoaded', () => {
             container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
         });
     });
+
+    // Cycle category button backgrounds with crossfade
+    const categoryButtons = document.querySelectorAll('.category-btn-h');
+    
+    if (categoryButtons.length > 0) {
+        const categoryData = {
+            'games': [...portfolioData.games, ...portfolioData.jams],
+            'minecraft': portfolioData.mods,
+            'misc': portfolioData.misc
+        };
+
+        categoryButtons.forEach((button) => {
+            const categoryKey = button.getAttribute('data-category');
+            const projects = categoryData[categoryKey];
+            
+            if (!projects || projects.length === 0) return;
+
+            // Create overlay div for crossfade effect
+            const overlay = document.createElement('div');
+            overlay.style.position = 'absolute';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundSize = 'cover';
+            overlay.style.backgroundPosition = 'center';
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 1s ease-in-out';
+            overlay.style.pointerEvents = 'none';
+            button.insertBefore(overlay, button.firstChild);
+
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % projects.length;
+                
+                // Set new image on overlay and fade it in
+                overlay.style.backgroundImage = `url('${projects[currentIndex].image}')`;
+                overlay.style.opacity = '1';
+                
+                // After fade completes, swap images and reset
+                setTimeout(() => {
+                    button.style.backgroundImage = `url('${projects[currentIndex].image}')`;
+                    overlay.style.opacity = '0';
+                }, 1000);
+            }, 3000); // Change every 3 seconds
+        });
+    }
 });
