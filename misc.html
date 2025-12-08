@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misc Projects - Yoav TC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo" onclick="window.location='index.html'" style="cursor: pointer;">Yoav TC</div>
+            <nav class="nav-links">
+                <a href="index.html">🏡Home</a>
+                <a href="games.html">👾Games</a>
+                <a href="minecraft.html">⛏️Minecraft</a>
+                <a href="misc.html" class="active">🗃️Misc</a>
+            </nav>
+        </header>
+
+        <h1 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-primary);">Misc Projects</h1>
+
+        <div class="projects-grid" id="misc-grid"></div>
+    </div>
+
+    <script src="projects.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectsGrid('misc-grid', portfolioData.misc);
+        });
+    </script>
+</body>
+</html>
