@@ -14,7 +14,7 @@
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="games.html">Games</a>
-                <a href="mods.html">Minecraft</a>
+                <a href="minecraft.html">Minecraft</a>
                 <a href="misc.html" class="active">Misc</a>
             </nav>
         </header>
@@ -22,13 +22,9 @@
         <h1 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-primary);">Misc Projects</h1>
 
         <div class="projects-grid" id="misc-grid"></div>
-
-        <footer>
-            &copy; 2025 Yoav Trachtman Cohen. All rights reserved.
-        </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="projects.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             renderProjectsGrid('misc-grid', portfolioData.misc);

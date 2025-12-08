@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games - Yoav TC</title>
+    <title>Minecraft - Yoav TC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,26 +13,21 @@
             <div class="logo" onclick="window.location='index.html'" style="cursor: pointer;">Yoav Trachtman Cohen</div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="games.html" class="active">Games</a>
-                <a href="mods.html">Minecraft</a>
+                <a href="games.html">Games</a>
+                <a href="minecraft.html" class="active">Minecraft</a>
                 <a href="misc.html">Misc</a>
             </nav>
         </header>
 
-        <h1 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-primary);">Games</h1>
+        <h1 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-primary);">Minecraft</h1>
 
-        <div class="projects-grid" id="games-grid"></div>
-
-        <footer>
-            &copy; 2025 Yoav Trachtman Cohen. All rights reserved.
-        </footer>
+        <div class="projects-grid" id="mods-grid"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="projects.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const allGames = [...portfolioData.games, ...portfolioData.jams];
-            renderProjectsGrid('games-grid', allGames);
+            renderProjectsGrid('mods-grid', portfolioData.mods);
         });
     </script>
 </body>
