@@ -68,10 +68,8 @@ function renderProjectsGrid(containerId, projects) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderProjects('games-container', portfolioData.games);
-    renderProjects('jams-container', portfolioData.jams);
-    renderProjects('mods-container', portfolioData.mods);
-    renderProjects('misc-container', portfolioData.misc);
+    // Merge games and jams into one array
+    portfolioData.games = [...portfolioData.games, ...portfolioData.jams];
 
     const carousels = document.querySelectorAll('.carousel-container');
 
