@@ -15,7 +15,7 @@ const portfolioData = {
         { title: "Catch the Cat", desc: "puzzle platformer", image: "banners/catch-the-cat.png", link: "https://yoav-tc.itch.io/catch-the-cat", external: true, note: "GMTK 2023" }
     ],
     mods: [
-        { title: "Christmas Decorations", desc: "32 christmas decorations", image: "banners/christmas-decorations.png", link: "https://yoavtc.github.io/christmas-decorations/", external: true, type: "datapack", note: "1.21.10" },
+        { title: "Christmas Decorations", desc: "32 christmas decorations", image: "banners/christmas-decorations.png", link: "https://yoavtc.github.io/christmas-decorations/", external: true, type: "datapack", note: "1.21.11" },
         { title: "Halloween Decorations", desc: "30 halloween decorations", image: "banners/halloween-decorations.png", link: "https://yoavtc.github.io/halloween-decorations/", external: true, type: "datapack", note: "1.21.10" },
         { title: "Decorations Plus", desc: "53 new decorations", image: "banners/decorations-plus.png", link: "https://yoavtc.github.io/deco-plus/", external: true, type: "datapack", note: "1.21.11" },
         { title: "Display Containers", desc: "display blocks in containers", image: "banners/display-containers.png", link: "https://modrinth.com/datapack/display-containers", external: true, type: "datapack", note: "1.21.9" },
