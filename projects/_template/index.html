@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoav TC - Portfolio</title>
+    <link rel="stylesheet" href="../../styles.css"> <!-- Main site styles -->
+    <link rel="stylesheet" href="../styles.css"> <!-- Project-specific styles -->
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo back-button" onclick="window.location='../../'">🏡Home</div>
+        </header>
+
+        <div class="hero" style="display: flex; flex-direction: column; align-items: center; gap: 40px;">
+            <div style="height: 300px; display: flex; flex-direction: row; align-items: center; width: 100%;">
+                <div class="hero-content" style="width: 100%; display: flex; flex-direction: column; align-items: flex-start;">
+                    <h2 style="margin: 0 0 10px 0;">Project Name</h2>
+                    <p style="margin: 0 0 1.5rem 0; text-align: left;">
+                        Project description
+                    </p>
+                    <hr style="width: 100%; margin-bottom: 15px; opacity: 50%; border: none; border-top: 1px solid currentColor;">
+                    <a class="project-link" href="#" target="_blank">🔗 Project Link</a>
+                    <a class="project-link" href="#" target="_blank">📂 Source Files</a>
+                    <a class="project-link" href="#" target="_blank">🖼️ Misc</a>
+                </div>
+                <div class="hero-image-wrapper" style="width: 60%; position: relative;">
+                    <!-- Optional: Set data-youtube-id to enable video modal (e.g., data-youtube-id="dQw4w9WgXcQ") -->
+                    <img src="../../banners/bamboo-flute.png" class="hero-image" data-youtube-id="dQw4w9WgXcQ">
+                    <!-- Play button overlay - only shows if data-youtube-id is set -->
+                    <div class="play-button-overlay" style="display: none;">
+                        <svg width="80" height="80" viewBox="0 0 80 80">
+                            <circle cx="40" cy="40" r="35" fill="rgba(0,0,0,0.7)"/>
+                            <polygon points="32,25 32,55 55,40" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-project-section">
+            <h1 style="padding: 10px; width: 100%; text-align: center;">About</h1>
+            <div class="about-project-content">
+                <p>
+                    Write detailed information about your project here. Explain the motivation, 
+                    the development process, challenges you faced, and solutions you implemented.
+                </p>
+                <p>
+                    You can use multiple paragraphs to organize your thoughts and provide 
+                    a comprehensive overview of the project.
+                </p>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="media-section">
+            <h1 style="padding: 10px; width: 100%; text-align: center;">Media</h1>
+            <div class="media-gallery">
+                <!-- Add your screenshots and GIFs here -->
+                <!-- Example:
+                <div class="media-item">
+                    <img src="path/to/screenshot1.png" alt="Screenshot 1">
+                    <p class="media-caption">Caption for this image</p>
+                </div>
+                <div class="media-item">
+                    <img src="path/to/demo.gif" alt="Demo GIF">
+                    <p class="media-caption">Demo showing feature X</p>
+                </div>
+                -->
+            </div>
+        </section>
+    </div>
+
+    <!-- YouTube Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="video-container">
+                <iframe id="youtubePlayer" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // YouTube Modal functionality
+        const modal = document.getElementById('videoModal');
+        const heroImage = document.querySelector('.hero-image');
+        const playButtonOverlay = document.querySelector('.play-button-overlay');
+        const modalClose = document.querySelector('.modal-close');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+        const youtubeId = heroImage.getAttribute('data-youtube-id');
+
+        // Show play button if YouTube ID is set
+        if (youtubeId && youtubeId.trim() !== '') {
+            playButtonOverlay.style.display = 'flex';
+            heroImage.style.cursor = 'pointer';
+            
+            // Open modal on click
+            const openModal = () => {
+                youtubePlayer.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+            
+            heroImage.addEventListener('click', openModal);
+            playButtonOverlay.addEventListener('click', openModal);
+        }
+
+        // Close modal
+        const closeModal = () => {
+            modal.style.display = 'none';
+            youtubePlayer.src = '';
+            document.body.style.overflow = 'auto';
+        };
+
+        modalClose.addEventListener('click', closeModal);
+        
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
