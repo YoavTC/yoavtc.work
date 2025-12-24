@@ -86,7 +86,6 @@ header {
     background-color: var(--card-bg);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
