@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji General TD - Yoav TC</title>
+    <link rel="stylesheet" href="../project_styles.css">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo back-button" onclick="window.location='../../index.html'">← Back to Home</div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="hero-inner" style="display: flex; flex-direction: row; align-items: center; width: 100%; gap: 40px; padding: 40px;">
+                <!-- Project Info -->
+                <div class="hero-content" style="width: 45%; display: flex; flex-direction: column; align-items: flex-start;">
+                    <h2 style="margin: 0 0 10px 0;">Emoji General TD</h2>
+                    <p style="margin: 0 0 1.5rem 0; text-align: left;">
+                        Defend against waves of incoming food emoji enemies using your own emoji towers. Command the emoji army and fight for survival.
+                    </p>
+                    
+                    <hr style="width: 100%; margin-bottom: 15px; opacity: 50%; border: none; border-top: 1px solid currentColor;">
+                    
+                    <!-- Project Links (use SVG icons or emoji) -->
+                    <a class="project-link" href="https://yoav-tc.itch.io/emoji-general-td">
+                        <div class="dynamic-icon" id="itch"></div>
+                        Play / Download
+                    </a>
+                    <a class="project-link" href="https://github.com/YoavTC/openu-final-project">
+                        <div class="dynamic-icon" id="github"></div>
+                        Source Code
+                    </a>
+                    <a class="project-link" href="https://youtu.be/gYZha3CZy3s">
+                        <div class="dynamic-icon" id="youtube"></div>
+                        Gameplay Showcase
+                    </a>
+                    
+                    <!-- Tags -->
+                    <div class="project-tags">
+                        <span class="tag">Game</span>
+                        <span class="tag">Unity 2D</span>
+                        <span class="tag">University Project</span>
+                    </div>
+                </div>
+                
+                <!-- Cover Image OR YouTube Embed (use one, comment out the other) -->
+                <div class="hero-media-wrapper">
+                    <!-- Option 1: Static Image -->
+                    <!-- <img src="banners/placeholder.png" class="hero-image" alt="Project Cover"> -->
+                    
+                    <!-- Option 2: YouTube Embed (16:9) - Replace VIDEO_ID with your YouTube video ID -->
+                    <div class="video-embed-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/crv7zQWgFnE " 
+                            title="Project Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-project">
+            <h1 style="width: 100%; text-align: center;">About</h1>
+            <div class="about-content">
+                <p>
+                    This is a game I made for my <a href="https://www.openu.ac.il/en/pages/default.aspx">Open University (Hasifa)</a>'s Game Development course's final project. You can check out the game I made with a team in the prior semester, <a href="https://github.com/YoavTC/openu-group-project">[REDACTED]</a>.
+                </p>
+                <p>
+                    It was made in the span of 3 months (Sep-Nov), done entirely by me. The game was made using Unity 2022.3.43f1.
+                </p>
+                <p>
+                    The game is a simple take on the Tower Defence genre. You use your towers that are emoji to fight off waves of incoming enemies that are food emoji. There are multiple tower and enemy types, and the game encourages to experiment and find combos and unique placing strategies.
+                </p>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="media-section">
+            <h1 style="width: 100%; text-align: center;">Media</h1>
+            <div class="media-gallery">
+                <!-- Example media items - duplicate and modify as needed -->
+                <div class="media-item">
+                    <img src="assets/2024-09-24 09-51-08_1.gif">
+                    <p class="media-caption">1st iteration</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/2024-10-28 22-11-34.gif">
+                    <p class="media-caption">2nd iteration</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/Screenshot_2.webp">
+                    <p class="media-caption">3rd (final) iteration</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/2024-11-27 16-50-18_1.gif">
+                    <p class="media-caption">Level selection menu</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/playtester.webp">
+                    <p class="media-caption">Playtesting</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/main_menu.webp">
+                    <p class="media-caption">Main menu screen</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="../../icons.js"></script>
+    <script src="../../linkfixer.js"></script>
+    <script src="../../header.js"></script>
+</body>
+</html>

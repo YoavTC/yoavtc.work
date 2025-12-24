@@ -7,16 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
         <header>
             <div class="logo" onclick="window.location='index.html'" style="cursor: pointer;">Yoav TC</div>
-            <nav class="nav-links">
-                <a href="index.html" class="active">🏡Home</a>
-                <a href="games.html">👾Games</a>
-                <a href="minecraft.html">⛏️Minecraft</a>
-                <a href="misc.html">🗃️Misc</a>
-            </nav>
         </header>
 
         <div class="hero" style="display: flex; flex-direction: column; align-items: center; gap: 40px;">
@@ -43,13 +36,13 @@
                 </div>
             </div>
             <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; padding: 0 30px 20px 30px;">
-                <a href="https://github.com/YoavTC/" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="github"></div> GitHub</a>
-                <a href="https://www.linkedin.com/in/yoav-trachtman-cohen-646bba241/" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="linkedin"></div> LinkedIn</a>
-                <a href="https://www.youtube.com/@yoav_tc" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="youtube"></div> YouTube</a>
-                <a href="https://bsky.app/profile/yoavtc.bsky.social" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="bluesky"></div> BlueSky</a>
-                <a href="https://yoav-tc.itch.io/" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="itch"></div> itch.io</a>
-                <a href="https://modrinth.com/user/yoav_tc" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="modrinth"></div> Modrinth</a>
-                <a href="https://www.curseforge.com/members/yoav_tc/projects" target="_blank" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="curseforge"></div> CurseForge</a>
+                <a href="https://github.com/YoavTC/" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="github"></div> GitHub</a>
+                <a href="https://www.linkedin.com/in/yoav-trachtman-cohen-646bba241/" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="linkedin"></div> LinkedIn</a>
+                <a href="https://www.youtube.com/@yoav_tc" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="youtube"></div> YouTube</a>
+                <a href="https://bsky.app/profile/yoavtc.bsky.social" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="bluesky"></div> BlueSky</a>
+                <a href="https://yoav-tc.itch.io/" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="itch"></div> itch.io</a>
+                <a href="https://modrinth.com/user/yoav_tc" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="modrinth"></div> Modrinth</a>
+                <a href="https://www.curseforge.com/members/yoav_tc/projects" style="color: var(--text-secondary); text-decoration: none;"><div class="dynamic-icon" id="curseforge"></div> CurseForge</a>
             </div>
         </div>
 
@@ -79,5 +72,7 @@
 
     <script src="projects.js"></script>
     <script src="icons.js"></script>
+    <script src="linkfixer.js"></script>
+    <script src="header.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // --- PROJECT DATA ---
 const portfolioData = {
     games: [
-        { title: "Emoji General TD", desc: "emoji tower defense game", image: "banners/emoji-general-td.png", link: "https://github.com/YoavTC/openu-final-project" },
+        { title: "Emoji General TD", desc: "emoji tower defense game", image: "banners/emoji-general-td.png", link: "projects/emoji-general-td/" },
         { title: "[REDACTED]", desc: "2D speedrunning platformer", image: "banners/redacted.png", link: "https://github.com/YoavTC/openu-group-project" },
         { title: "Israel Wolfenstein", desc: "parody boomer-shooter", image: "banners/israel-wolfenstein.png", link: "https://yoav-tc.itch.io/israel-wolfenstein" },
         { title: "Pizza Defender", desc: "Casual mobile game", image: "banners/pizza-defender.png", link: "https://www.youtube.com/watch?v=ZIDMgc64Wtw" },

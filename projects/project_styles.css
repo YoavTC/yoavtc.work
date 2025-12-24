@@ -78,6 +78,15 @@
     margin-bottom: 1.2rem;
 }
 
+.about-content a {
+    color: #85c0f0;
+    text-decoration: none;
+}
+
+.about-content a:hover {
+    text-decoration: underline;
+}
+
 /* Media Section */
 .media-section {
     margin: 40px 0;
@@ -136,6 +145,12 @@
     padding: 4px 12px;
     font-size: 0.8rem;
     border: 1px solid var(--border-color);
+}
+
+/* Exclude links in the hero description section */
+.hero-content p a {
+    text-decoration: underline !important;
+    padding: 0 !important;
 }
 
 /* Responsive */
