@@ -15,9 +15,10 @@ const portfolioData = {
         { title: "Catch the Cat", desc: "puzzle platformer", image: "banners/catch-the-cat.png", link: "https://yoav-tc.itch.io/catch-the-cat", external: true, note: "GMTK 2023" }
     ],
     mods: [
+        { title: "Decorations Plus", desc: "69 new decorations", image: "banners/decorations-plus.png", link: "https://yoavtc.github.io/deco-plus/", external: true, type: "datapack", note: "26.1.1" },
+        { title: "Dynamic Campfires", desc: "Craft Campfires that turn on at night and off in the morning", image: "banners/dynamic-campfires.png", link: "https://yoavtc.github.io/deco-plus/", external: true, type: "datapack", note: "1.21.11" },
         { title: "Christmas Decorations", desc: "32 christmas decorations", image: "banners/christmas-decorations.png", link: "https://yoavtc.github.io/christmas-decorations/", external: true, type: "datapack", note: "1.21.11" },
         { title: "Halloween Decorations", desc: "30 halloween decorations", image: "banners/halloween-decorations.png", link: "https://yoavtc.github.io/halloween-decorations/", external: true, type: "datapack", note: "1.21.10" },
-        { title: "Decorations Plus", desc: "53 new decorations", image: "banners/decorations-plus.png", link: "https://yoavtc.github.io/deco-plus/", external: true, type: "datapack", note: "1.21.11" },
         { title: "Display Containers", desc: "display blocks in containers", image: "banners/display-containers.png", link: "https://modrinth.com/datapack/display-containers", external: true, type: "datapack", note: "1.21.9" },
         { title: "Rain Temple", desc: "control the weather", image: "banners/rain-temple.png", link: "https://modrinth.com/datapack/rain-temple", external: true, type: "datapack", note: "1.21.8" },
         { title: "Dynamic Light Sources", desc: "automate lights activation", image: "banners/dynamic-light-sources.png", link: "https://modrinth.com/datapack/dynamic-light-sources", external: true, type: "datapack", note: "1.21.8" },
