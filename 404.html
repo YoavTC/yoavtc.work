@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Yoav TC</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .not-found-wrap {
+            min-height: 70vh;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+        }
+
+        .not-found-card {
+            width: min(700px, 100%);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            padding: 28px;
+        }
+
+        .path-box {
+            margin-top: 12px;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            overflow-wrap: anywhere;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .status-line {
+            margin-top: 14px;
+            color: var(--text-secondary);
+        }
+
+        .actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            background: transparent;
+            font: inherit;
+        }
+
+        .btn:hover {
+            background-color: rgba(250, 204, 21, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo" onclick="window.location='/index.html'" style="cursor: pointer;">Yoav TC</div>
+        </header>
+
+        <main class="not-found-wrap">
+            <section class="not-found-card" aria-live="polite">
+                <h1>404 - Page Not Found</h1>
+                <p class="status-line" id="status-text">Trying to resolve this path...</p>
+                <div class="path-box" id="requested-path"></div>
+                <div class="actions">
+                    <a class="btn" href="/index.html">Go Home</a>
+                    <a class="btn" href="/games.html">Games</a>
+                    <a class="btn" href="/minecraft.html">Minecraft</a>
+                    <a class="btn" href="/misc.html">Misc</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/projects.js"></script>
+    <script>
+        (function () {
+            const requestedPathEl = document.getElementById('requested-path');
+            const statusTextEl = document.getElementById('status-text');
+
+            const requestedPath = window.location.pathname + window.location.search + window.location.hash;
+            requestedPathEl.textContent = requestedPath;
+
+            const toSlug = (value) =>
+                String(value || '')
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+
+            const normalizePath = (value) => {
+                if (!value) return '';
+
+                let raw = String(value).trim();
+                if (!raw) return '';
+
+                try {
+                    raw = decodeURIComponent(raw);
+                } catch (e) {
+                    // Keep the raw value if decoding fails.
+                }
+
+                raw = raw.replace(/^https?:\/\/[^/]+/i, '');
+                raw = raw.split('#')[0].split('?')[0];
+                raw = raw.replace(/\\/g, '/');
+                raw = raw.replace(/^\/+/, '').replace(/\/+$/, '');
+
+                return raw.toLowerCase();
+            };
+
+            const routeMap = new Map();
+            const addRoute = (from, to) => {
+                const key = normalizePath(from);
+                if (!key) return;
+
+                const target = '/' + normalizePath(to);
+                routeMap.set(key, target === '/index' ? '/index.html' : target);
+            };
+
+            // Core pages.
+            [
+                ['index', '/index.html'],
+                ['index.html', '/index.html'],
+                ['home', '/index.html'],
+                ['games', '/games.html'],
+                ['games.html', '/games.html'],
+                ['minecraft', '/minecraft.html'],
+                ['minecraft.html', '/minecraft.html'],
+                ['misc', '/misc.html'],
+                ['misc.html', '/misc.html'],
+                ['404', '/404.html'],
+                ['404.html', '/404.html'],
+                ['projects', '/projects/emoji-general-td/'],
+                ['projects/emoji-general-td', '/projects/emoji-general-td/'],
+                ['projects/emoji-general-td/index.html', '/projects/emoji-general-td/']
+            ].forEach(([from, to]) => addRoute(from, to));
+
+            // Include internal project links and title slugs from projects.js.
+            if (typeof portfolioData === 'object' && portfolioData) {
+                Object.values(portfolioData).forEach((group) => {
+                    if (!Array.isArray(group)) return;
+
+                    group.forEach((item) => {
+                        if (!item || typeof item !== 'object') return;
+                        if (typeof item.link !== 'string') return;
+
+                        const isExternal = /^https?:\/\//i.test(item.link);
+                        if (isExternal) return;
+
+                        const cleanLink = normalizePath(item.link);
+                        if (!cleanLink) return;
+
+                        addRoute(cleanLink, '/' + cleanLink);
+
+                        const parts = cleanLink.split('/').filter(Boolean);
+                        const lastSegment = parts[parts.length - 1] || '';
+                        const titleSlug = toSlug(item.title || '');
+
+                        if (titleSlug) {
+                            addRoute(titleSlug, '/' + cleanLink);
+                            addRoute('projects/' + titleSlug, '/' + cleanLink);
+                        }
+
+                        if (lastSegment && lastSegment !== 'index.html') {
+                            addRoute(lastSegment, '/' + cleanLink);
+                            addRoute('projects/' + lastSegment, '/' + cleanLink);
+                        }
+                    });
+                });
+            }
+
+            const resolveCandidate = (candidate) => {
+                const normalized = normalizePath(candidate);
+                if (!normalized) return null;
+
+                const variants = [
+                    normalized,
+                    normalized + '.html',
+                    normalized + '/index.html',
+                    normalized.replace(/\/index\.html$/, ''),
+                    normalized.replace(/\.html$/, ''),
+                    normalized.replace(/^projects\//, ''),
+                    'projects/' + normalized,
+                    toSlug(normalized)
+                ];
+
+                for (const variant of variants) {
+                    const mapped = routeMap.get(normalizePath(variant));
+                    if (mapped) {
+                        return mapped;
+                    }
+                }
+
+                return null;
+            };
+
+            const queryCandidates = [];
+            const params = new URLSearchParams(window.location.search);
+            ['path', 'p', 'q', 'route', 'redirect', 'project', 'slug'].forEach((key) => {
+                const value = params.get(key);
+                if (value) queryCandidates.push(value);
+            });
+
+            const pathSegments = normalizePath(window.location.pathname)
+                .split('/')
+                .filter(Boolean);
+
+            const candidates = [
+                window.location.pathname,
+                ...queryCandidates,
+                ...pathSegments,
+                pathSegments.slice(-2).join('/'),
+                pathSegments.slice(-3).join('/')
+            ].filter(Boolean);
+
+            let match = null;
+            for (const candidate of candidates) {
+                match = resolveCandidate(candidate);
+                if (match) break;
+            }
+
+            if (match && normalizePath(match) !== normalizePath('404.html')) {
+                statusTextEl.textContent = 'Found a matching page. Redirecting now...';
+                window.location.replace(match);
+                return;
+            }
+
+            statusTextEl.textContent = 'No matching internal page found. Redirecting home...';
+            setTimeout(() => {
+                window.location.replace('/index.html');
+            }, 2200);
+        })();
+    </script>
+    <script src="/linkfixer.js"></script>
+</body>
+</html>
