@@ -15,6 +15,7 @@ const portfolioData = {
         { title: "Catch the Cat", desc: "puzzle platformer", image: "banners/catch-the-cat.png", link: "https://yoav-tc.itch.io/catch-the-cat", external: true, note: "GMTK 2023" }
     ],
     mods: [
+        { title: "Pride Flags", desc: "Add pride flags to the game, no resourcepacks required! 100% multiplayer friendly!", image: "banners/pride-flags.jpg", link: "https://github.com/YoavTC/pride-flags", external: true, type: "datapack", note: "26.1" },
         { title: "Debug Entity Data", desc: "Simple utility datapack which allows you to easily view a data path of entities", image: "banners/debug-entity-data.gif", link: "https://github.com/YoavTC/debug-entity-data", external: true, type: "datapack", note: "26.1.2" },
         { title: "Upgradeable Spawners", desc: "Upgrade spawners' speed, range & activation range", image: "banners/upgradeable-spawners.gif", link: "https://yoavtc.github.io/upgradeable-spawners/", external: true, type: "datapack", note: "26.1.x" },
         { title: "Decorations Plus", desc: "69 new decorations", image: "banners/decorations-plus.png", link: "https://yoavtc.github.io/deco-plus/", external: true, type: "datapack", note: "26.1.1" },
