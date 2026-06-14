@@ -33,10 +33,11 @@ const portfolioData = {
         { title: "Mulberry", desc: "Mulberry trees & berries", image: "banners/mulberry.webp", link: "https://www.curseforge.com/minecraft/mc-mods/mulberry", external: true, type: "mod", note: "1.19.2" }
     ],
     misc: [
-        { title: "CLAYTYNE", desc: "minecraft server", image: "banners/claytyne.png", link: "https://www.youtube.com/@claytyneserver3182" },
+        { title: "Email to Markdown", desc: "Generate a Markdown snippet from an email", image: "banners/email2md.png", link: "https://addons.mozilla.org/en-US/firefox/addon/gmail-to-markdown/", external: true },
         { title: "de_jaffa", desc: "Counter Strike map", image: "banners/de_jaffa.png", link: "https://steamcommunity.com/sharedfiles/filedetails/?id=2784890244", external: true },
         { title: "Roll 20 Die", desc: "D20 dice roller", image: "banners/roll-20-die.png", link: "https://yoav-tc.itch.io/roll-20-die", external: true },
-        { title: "VCT Coin Toss", desc: "valorant teams coin flip", image: "banners/vct-cointoss.png", link: "https://yoav-tc.itch.io/vct-coin-toss", external: true }
+        { title: "VCT Coin Toss", desc: "valorant teams coin flip", image: "banners/vct-cointoss.png", link: "https://yoav-tc.itch.io/vct-coin-toss", external: true },
+        { title: "CLAYTYNE", desc: "minecraft server", image: "banners/claytyne.png", link: "https://www.youtube.com/@claytyneserver3182" },
     ]
 };
 
