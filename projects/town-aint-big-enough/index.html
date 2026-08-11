@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMTK-26 - Yoav TC</title>
+    <link rel="stylesheet" href="../project_styles.css">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo back-button" onclick="window.location='../../index.html'">← Back to Home</div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="hero-inner" style="display: flex; flex-direction: row; align-items: center; width: 100%; gap: 40px; padding: 40px;">
+                <!-- Project Info -->
+                <div class="hero-content" style="width: 45%; display: flex; flex-direction: column; align-items: flex-start;">
+                    <h2 style="margin: 0 0 10px 0;">This Town Ain't Big Enough for the BOOM of Us</h2>
+                    <p style="margin: 0 0 1.5rem 0; text-align: left;">
+                        Defend your frontier town from ruthless cowboy outlaws by solving grid-based puzzles.
+                    </p>
+                    
+                    <hr style="width: 100%; margin-bottom: 15px; opacity: 50%; border: none; border-top: 1px solid currentColor;">
+                    
+                    <!-- Project Links (use SVG icons or emoji) -->
+                    <a class="project-link" href="https://yoav-tc.itch.io/town-aint-big-enough">
+                        <div class="dynamic-icon" id="itch"></div>
+                        Play / Download
+                    </a>
+                    <a class="project-link" href="https://github.com/YoavTC/GMTK-26">
+                        <div class="dynamic-icon" id="github"></div>
+                        Source Code
+                    </a>
+                    <!-- <a class="project-link" href="">
+                        <div class="dynamic-icon" id="youtube"></div>
+                        Video
+                    </a> -->
+                    
+                    <!-- Tags -->
+                    <div class="project-tags">
+                        <span class="tag">Game</span>
+                        <span class="tag">Unity 2D</span>
+                        <span class="tag">Game Jam</span>
+                        <span class="tag">Puzzle</span>
+                    </div>
+                </div>
+                
+                <!-- Cover Image OR YouTube Embed (use one, comment out the other) -->
+                <div class="hero-media-wrapper">
+                    <!-- Option 1: Static Image -->
+                    <!-- <img src="banners/placeholder.png" class="hero-image" alt="Project Cover"> -->
+                    <video src="assets/output.webm" controls autoplay muted loop class="hero-image" alt="Project Cover"></video>
+                    
+                    <!-- Option 2: YouTube Embed (16:9) - Replace VIDEO_ID with your YouTube video ID -->
+                    <!-- <div class="video-embed-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/ID" 
+                            title="Project Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-project">
+            <h1 style="width: 100%; text-align: center;">About</h1>
+            <div class="about-content">
+                <p>
+                    This game was made for the <a href="https://itch.io/jam/gmtk-jam-2026/">2026 GMTK Game Jam</a> in 85 hours, following the theme <b>Countdown</b>. It was made by me and <a href="https://goftis.com/">Shay Goft</a> in Unity 6000.5.1f1, between the dates 22/07/2026 and 26/07/2026.
+                </p>
+                <p>
+                    In the game, you play as a sheriff defending a frontier town from a gang of outlaws. Each level is a puzzle where you must push objects around a grid to prevent the outlaws' bullets from hitting the town’s TNT or buildings.
+                </p>
+                <p>
+                    You have a limited number of moves before high noon, when the outlaws draw their revolvers and fire. Use deflectors to change bullet trajectories, setting up collisions between bullets or sending them straight into an outlaw.
+                </p>
+                <p>
+                    Destroy every bullet without letting a single shot hit the TNT or fly off the edge of the map. Make every move count and protect the town!
+                </p>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="media-section">
+            <h1 style="width: 100%; text-align: center;">Media</h1>
+            <div class="media-gallery">
+                <!-- Example media items - duplicate and modify as needed -->
+                <div class="media-item">
+                    <img src="assets/main_menu.webp">
+                    <p class="media-caption">Main Menu</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/lvl0.webp">
+                    <p class="media-caption">Screenshot 01</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/lvl1.webp">
+                    <p class="media-caption">Screenshot 02</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/lvl2.webp">
+                    <p class="media-caption">Screenshot 03</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/death.webp">
+                    <p class="media-caption">Death Screen</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/win.webp">
+                    <p class="media-caption">Win Screen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BTS Section -->
+        <section class="media-section">
+            <h1 style="width: 100%; text-align: center;">BTS</h1>
+            <div class="media-gallery">
+                <!-- Example media items - duplicate and modify as needed -->
+                <div class="media-item">
+                    <img src="assets/bts0.webp">
+                    <p class="media-caption">Initial Levels Sketch</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/bts1.webp">
+                    <p class="media-caption">Outlaws Concepts</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/bts2.webp">
+                    <p class="media-caption">Initial Gameplay Sketch</p>
+                </div>
+                <div class="media-item">
+                    <img src="assets/bts3.webp">
+                    <p class="media-caption">Puzzle Ideas</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="../../icons.js"></script>
+    <script src="../../linkfixer.js"></script>
+    <script src="../../header.js"></script>
+</body>
+</html>

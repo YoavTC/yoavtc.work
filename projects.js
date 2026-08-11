@@ -1,18 +1,17 @@
 // --- PROJECT DATA ---
 const portfolioData = {
     games: [
+        { title: "This Town Ain't Big Enough for the BOOM of Us", desc: "western grid puzzle", image: "banners/town-aint-big-enough.png", link: "projects/town-aint-big-enough/", note: "GMTK 2026" },
+        { title: "Swing King", desc: "swinging speedrunning", image: "banners/swing-king.png", link: "https://yoav-tc.itch.io/swing-king", note: "GMTK 2025" },
         { title: "Emoji General TD", desc: "emoji tower defense game", image: "banners/emoji-general-td.png", link: "projects/emoji-general-td/" },
         { title: "[REDACTED]", desc: "2D speedrunning platformer", image: "banners/redacted.png", link: "https://github.com/YoavTC/openu-group-project" },
+        { title: "Bubble Brawl", desc: "1v1 brawler", image: "banners/bubble-brawl.png", link: "https://brohad.itch.io/bubble-brawl", external: true, note: "GGJ 2025" },
         { title: "Israel Wolfenstein", desc: "parody boomer-shooter", image: "banners/israel-wolfenstein.png", link: "https://yoav-tc.itch.io/israel-wolfenstein" },
         { title: "Pizza Defender", desc: "Casual mobile game", image: "banners/pizza-defender.png", link: "https://www.youtube.com/watch?v=ZIDMgc64Wtw" },
-        { title: "Chef Shooter", desc: "arcade-like shooter", image: "banners/chef-shooter.png", link: "https://yoav-tc.itch.io/chef-shooter" }
-    ],
-    jams: [
-        { title: "Swing King", desc: "swinging speedrunning", image: "banners/swing-king.png", link: "https://yoav-tc.itch.io/swing-king", note: "GMTK 2025" },
+        { title: "Chef Shooter", desc: "arcade-like shooter", image: "banners/chef-shooter.png", link: "https://yoav-tc.itch.io/chef-shooter" },
         { title: "Safezone", desc: "casual bullet-hell", image: "banners/safezone.png", link: "https://yoav-tc.itch.io/mamad-jam", external: true, note: "Mamad Game Jam" },
-        { title: "Bubble Brawl", desc: "1v1 brawler", image: "banners/bubble-brawl.png", link: "https://brohad.itch.io/bubble-brawl", external: true, note: "GGJ 2025" },
         { title: "Sinking", desc: "speedrunning platformer", image: "banners/sinking.png", link: "https://brohad.itch.io/sinking", external: true, note: "GMTK 2024" },
-        { title: "Catch the Cat", desc: "puzzle platformer", image: "banners/catch-the-cat.png", link: "https://yoav-tc.itch.io/catch-the-cat", external: true, note: "GMTK 2023" }
+        { title: "Catch the Cat", desc: "puzzle platformer", image: "banners/catch-the-cat.png", link: "https://yoav-tc.itch.io/catch-the-cat", external: true, note: "GMTK 2023" },
     ],
     mods: [
         { title: "Pride Flags", desc: "Add pride flags to the game, no resourcepacks required! 100% multiplayer friendly!", image: "banners/pride-flags.jpg", link: "https://github.com/YoavTC/pride-flags", external: true, type: "datapack", note: "26.1" },
@@ -80,9 +79,6 @@ function renderProjectsGrid(containerId, projects) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Merge games and jams into one array
-    portfolioData.games = [...portfolioData.games, ...portfolioData.jams];
-
     const carousels = document.querySelectorAll('.carousel-container');
 
     carousels.forEach(carousel => {
@@ -148,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (categoryButtons.length > 0) {
         const categoryData = {
-            'games': [...portfolioData.games, ...portfolioData.jams],
+            'games': portfolioData.games,
             'minecraft': portfolioData.mods,
             'misc': portfolioData.misc
         };
